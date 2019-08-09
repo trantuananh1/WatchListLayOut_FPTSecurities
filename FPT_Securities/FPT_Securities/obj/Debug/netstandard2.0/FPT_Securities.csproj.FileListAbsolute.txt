@@ -1,0 +1,15 @@
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\bin\Debug\netstandard2.0\FPT_Securities.deps.json
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\bin\Debug\netstandard2.0\FPT_Securities.dll
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\FPT_Securities.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\FPT_Securities.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\FPT_Securities.AssemblyInfo.cs
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\bin\Debug\netstandard2.0\FPT_Securities.pdb
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\FPT_Securities.dll
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\FPT_Securities.pdb
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\Views\SearchStockPage.xaml.g.cs
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\Views\WatchlistPage.xaml.g.cs
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\FPT_Securities.csprojAssemblyReference.cache
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\Views\CategoryPopupPage.xaml.g.cs
+C:\Users\ADMIN\Desktop\FPT_Securities\FPT_Securities\FPT_Securities\obj\Debug\netstandard2.0\XamlC.stamp

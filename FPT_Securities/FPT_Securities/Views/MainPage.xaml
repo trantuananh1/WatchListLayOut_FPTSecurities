@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="FPT_Securities.MainPage"
+             BackgroundColor="White"
+             x:Name="page"
+             NavigationPage.HasNavigationBar="False"
+             Padding="10">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="WatchListStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="TextColor" Value="{Binding MatchColor}"/>
+                <Setter Property="VerticalOptions" Value="Center"/>
+            </Style>
+            <Style x:Key="HeaderListStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="HorizontalOptions" Value="End"/>
+                <Setter Property="VerticalOptions" Value="End"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Grid RowSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                </Grid.RowDefinitions>
+
+                <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" 
+                       Text="BẢNG GIÁ" FontSize="Large" FontAttributes="Bold" 
+                       HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                
+                <Grid Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="2" HorizontalOptions="CenterAndExpand">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0" Source="ic_watchlist_category.png" BackgroundColor="White" Margin="0,5,5,5"
+                         Command="{Binding CategoryPopupCommand}"/>
+                    <ImageButton Grid.Column="1" Source="ic_watchlist_add.png" BackgroundColor="White"  Margin="5"
+                         Command="{Binding SearchStockCommand}"/>
+                    <ImageButton Grid.Column="2" Source="ic_watchlist_todetail.png" BackgroundColor="White" Margin="5,5,0,5"
+                         Command="{Binding WatchlistCommand}"/>
+                </Grid>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Mã" FontSize="16" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="End"/>
+                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Text="Giá" Style="{StaticResource HeaderListStyle}"  />
+                <StackLayout Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" HorizontalOptions="End" VerticalOptions="Start" >
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeClickedCommand}"/>
+                    </StackLayout.GestureRecognizers>
+                    <Image Source="ic_watchlist_chanbg.png" BackgroundColor="White" Scale="50"/>
+                    <Label Text="Thay đổi(%)" Style="{StaticResource HeaderListStyle}"/>
+                </StackLayout>
+                <Label Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2" Text="Khối lượng" Style="{StaticResource HeaderListStyle}" />
+
+                <BoxView Grid.Row="2" Grid.ColumnSpan="7" BackgroundColor="WhiteSmoke"/>
+            </Grid>
+
+            <ScrollView>
+                <StackLayout>
+                <ListView x:Name="listV" ItemsSource="{Binding WatchLists}" HorizontalOptions="FillAndExpand">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Text="{Binding Symbol}" HorizontalTextAlignment="Start" Style="{StaticResource WatchListStyle}"/>
+                                    <Label Grid.Column="1" Text="{Binding MatchPrice}" HorizontalTextAlignment="End" Style="{StaticResource WatchListStyle}"/>
+                                    <Label Grid.Column="2" 
+                                           Text="{Binding Change}" 
+                                           HorizontalTextAlignment="End"
+                                           Style="{StaticResource WatchListStyle}">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label"
+                                                         Binding="{Binding Source={x:Reference page}, Path=BindingContext.IsVisibleChange}"
+                                                         Value='False'>
+                                                <Setter Property="Text" Value="{Binding ChangePct,StringFormat='{0:F2}%'}" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                    <Label Grid.Column="3" Text="{Binding Quantity,StringFormat='{0:0,0}'}" HorizontalTextAlignment="End" Style="{StaticResource WatchListStyle}"/>
+                                </Grid>
+                        </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                </StackLayout>
+            </ScrollView>
+        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
